@@ -31,7 +31,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <ul className="list-disc pl-5">
             <li>
               Calling <pre className="text-red-400 inline">router.refresh()</pre> when navigating. Nothing happens that
-              I can see. That is not included here, as it changed the project structure a bit (client components for Nav)
+              I can see. That is not included here, as it changed the project structure a bit (client components for
+              Nav)
             </li>
             <li>
               Adding a key to the <pre className="text-red-400 inline">{'<Suspense />'}</pre> of{' '}
@@ -42,8 +43,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </ul>
           <p className="border-b-2 pb-5 my-5">The content below this line is wrapped in a suspense.</p>
           {children}
-          <p className="mt-100 mb-10 pt-5 mt-10 border-t-2">
-            This content below this line is static, and below the suspense
+          <p className="mt-100 pt-5 mt-10 border-t-2">This content below this line is static, and below the suspense</p>
+          <p className="mb-10">
+            Special thanks to <a href="https://punkapi.com/documentation/v2">https://punkapi.com/documentation/v2</a>{' '}
+            for the data.
           </p>
         </main>
       </body>
