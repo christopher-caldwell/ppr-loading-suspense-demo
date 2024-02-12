@@ -41,7 +41,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               which defeats the purpose of it. However, I would take that as a tradeoff if it worked.
             </li>
           </ul>
-          <p className="border-b-2 pb-5 my-5">The content below this line is wrapped in a suspense.</p>
           {children}
           <p className="mt-100 pt-5 mt-10 border-t-2">This content below this line is static, and below the suspense</p>
           <p className="mb-10">

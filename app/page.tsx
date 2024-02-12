@@ -3,14 +3,16 @@ import { NextPage } from 'next'
 
 import { BeerResults, LoadingFallback } from '@/features/results'
 
-const Page: NextPage<HomeProps> = ({ searchParams }) => {
+const DoesHaveKeyPage: NextPage<HomeProps> = ({ searchParams }) => {
   return (
     <>
+      <p className="my-5">
+        This page <strong>does not</strong> have a key on {'<Suspense />'}, making it a PPR page. Interestingly, if I
+        wrap the word "Suspense" in a "pre" html tag, it causes a hydration issue. I am unsure if it's related, and
+        doesn't matter to much.
+      </p>
+      <p className="border-b-2 pb-5 my-5">The content below this line is wrapped in a suspense.</p>
       <Suspense key={JSON.stringify(searchParams)} fallback={<LoadingFallback />}>
-        <p className="mb-5">
-          This page <strong>does</strong> have a key on <pre className="text-red-400 inline">{'<Suspense />'}</pre>,
-          making it a Dynamic page
-        </p>
         <BeerResults searchParams={searchParams} />
       </Suspense>
     </>
@@ -21,4 +23,4 @@ type HomeProps = {
   searchParams: Record<string, string>
 }
 
-export default Page
+export default DoesHaveKeyPage
