@@ -1,8 +1,7 @@
 import { FC } from 'react'
 
 import { getBeers } from './api'
-import { BeerCard } from './componnets/card'
-import { BeerPagination } from './componnets/pagination'
+import { BeerPagination, BeerCard } from './components'
 
 export const BeerResults: FC<BeerResultsProps> = async ({ searchParams }) => {
   const pageNumber = Number(searchParams.page ?? '1')
@@ -22,3 +21,5 @@ export const BeerResults: FC<BeerResultsProps> = async ({ searchParams }) => {
 type BeerResultsProps = {
   searchParams: Record<string, string>
 }
+
+export { LoadingFallback } from './components'
