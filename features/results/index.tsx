@@ -2,11 +2,9 @@ import { FC } from 'react'
 
 import { getBeers } from './api'
 import { BeerPagination, BeerCard } from './components'
-import { unstable_noStore } from 'next/cache'
 
 export const BeerResults: FC<BeerResultsProps> = async ({ searchParams }) => {
   const pageNumber = Number(searchParams.page ?? '1')
-  unstable_noStore()
   const beers = await getBeers(pageNumber ?? 1)
   return (
     <>
