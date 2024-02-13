@@ -13,7 +13,7 @@ const DoesNotHaveKeyPage: NextPage<HomeProps> = ({ searchParams }) => {
       </p>
       <p className="border-b-2 pb-5 my-5">The content below this line is wrapped in a suspense.</p>
       <Suspense fallback={<LoadingFallback />}>
-        <BeerResults searchParams={searchParams} />
+        {/* <BeerResults searchParams={searchParams} /> */}
       </Suspense>
     </>
   )

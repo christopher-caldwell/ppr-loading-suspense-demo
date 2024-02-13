@@ -1,3 +1,4 @@
+'use server'
 import { Beer } from './types'
 
 const apiUrl = 'https://api.punkapi.com/v2/beers'
@@ -6,7 +7,7 @@ const apiUrl = 'https://api.punkapi.com/v2/beers'
 const per_page = 8
 
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
-export const getBeers = async (page: number | string) => {
+const getBeers = async (page: number | string) => {
   await wait(3000)
   const response = await fetch(`${apiUrl}?page=${page}&per_page=${per_page}`, {
     next: {
@@ -19,3 +20,5 @@ export const getBeers = async (page: number | string) => {
 
   return data as Beer[]
 }
+
+export default getBeers

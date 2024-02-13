@@ -12,9 +12,8 @@ const DoesHaveKeyPage: NextPage<HomeProps> = ({ searchParams }) => {
         doesn't matter to much.
       </p>
       <p className="border-b-2 pb-5 my-5">The content below this line is wrapped in a suspense.</p>
-      <Suspense key={JSON.stringify(searchParams)} fallback={<LoadingFallback />}>
-        <BeerResults searchParams={searchParams} />
-      </Suspense>
+
+      <BeerResults searchParams={searchParams} />
     </>
   )
 }
