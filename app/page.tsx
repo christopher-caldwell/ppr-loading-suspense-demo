@@ -7,7 +7,7 @@ const DoesHaveKeyPage: NextPage<HomeProps> = ({ searchParams }) => {
   return (
     <>
       <p className="my-5">
-        This page <strong>does not</strong> have a key on {'<Suspense />'}, making it a PPR page. Interestingly, if I
+        This page <strong>does</strong> have a key on {'<Suspense />'}, making it a Dynamic page. Interestingly, if I
         wrap the word "Suspense" in a "pre" html tag, it causes a hydration issue. I am unsure if it's related, and
         doesn't matter to much.
       </p>
